@@ -1,0 +1,7 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hello-openshift-kustomize
+spec:
+  host: hello-openshift-dev.apps.non-prod.hcaocp.com
+

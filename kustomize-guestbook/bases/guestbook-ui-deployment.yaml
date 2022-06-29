@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-openshift-kustomize
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: hello-openshift-kustomize
+  template:
+    metadata:
+      labels:
+        app: hello-openshift-kustomize
+    spec:
+      containers:
+      - image: quay.io/openshifttest/hello-openshift:multiarch
+        name: hello-openshift-kustomize
+        ports:
+        - containerPort: 8080
