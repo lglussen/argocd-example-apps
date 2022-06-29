@@ -1,0 +1,11 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: hello-openshift
+spec:
+  host: helm-example.apps.non-prod.hcaocp.com
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: {{ template "helm-guestbook.fullname" . }}
